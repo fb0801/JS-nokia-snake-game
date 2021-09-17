@@ -86,13 +86,13 @@ function control(event){
     //different keys for the user to control the snake
     squares[currentIndex].classList.remove('snake') //remove the snake class
 
-    if (event.key === 'ArrowRight' || event.keycode === 39){ // 39 87
+    if (event.key === 'ArrowRight' || event.keycode === 39 || event.key==='d'){ // 39 87
         direction = 1 // if we move the snake to the right
-    } else if(event.key ==="ArrowUp" ||event.key === 38) {
+    } else if(event.key ==="ArrowUp" ||event.key === 38 || event.key==='w') {
         direction = -width // if we press up btn
-    } else if (event.keycode === 37) {
+    } else if (event.key ==='ArrowLeft' || event.keycode === 37 || event.key==='a') {
         direction = -1 // if we move the snake left
-    } else if (event.key === 'ArrowDown') { 
+    } else if (event.key === 'ArrowDown' || event.keycode === 40 || event.key ==='s') { 
         direction = +width // if we move the snake down 
     }
 
