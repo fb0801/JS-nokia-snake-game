@@ -44,8 +44,29 @@ function moveOutcomes(){
         (currentSnake[0] - width < 0 && direction === -width) || // if snake hits the top
         squares[currentSnake[0] + direction].classList.contains('snake') // if snake hit itsself
         )   {
-            
+            return clearInterval(interval) // clear the interval
         }
+
+
+    const tail = currentSnake.pop() //remove last ite of the array and display it
+    squares[tail].classList.remove('snake') // remove the snak tail from the class
+    currentSnake.unshift(currentSnake[0] + direction) //direction to the head
+
+    // to deal with the snake obtaining the apple
+    if (squares[currentSnake[0]].classList.contains('apple')) {
+            squares[currentSnake[0]].classList.remove('apple')
+            squares[tail].classList.add('snake')
+            currentSnake.push(tail)
+            //randomApple()
+            score++
+            scoreDisplay.textContent = score //display the new score
+            clearInterval(interval)
+            intervalTime = intervalTime * speed
+            interval = setInterval(moveOutcomes, intervalTime)
+    }
+
+    squares[currentSnake[0]].classList.add('snake')
+
 }
 
 
