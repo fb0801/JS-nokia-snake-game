@@ -23,7 +23,7 @@ function startGame(){
     squares[appleIndex].classList.remove('apple')
     clearInterval(interval)
     score = 0
-    //randomApple()
+    randomApple()
     direction = 1
     scoreDisplay.innerText = score // to display the score in the game
     intervalTime = 1000 // number of seconds
@@ -57,7 +57,7 @@ function moveOutcomes(){
             squares[currentSnake[0]].classList.remove('apple')
             squares[tail].classList.add('snake')
             currentSnake.push(tail)
-            //randomApple()
+           randomApple()
             score++
             scoreDisplay.textContent = score //display the new score
             clearInterval(interval)
@@ -68,6 +68,16 @@ function moveOutcomes(){
     squares[currentSnake[0]].classList.add('snake')
 
 }
+
+// generate random apples
+function randomApple(){
+    // use while so the apple does not go somewhere on top of the snake
+    do {
+        appleIndex = Math.floor(Math.random() * squares.length)
+    } while (squares[appleIndex].classList.contains('snake'))
+        squares[appleIndex].classList.add('apple')
+}
+
 
 
 function control(e){
