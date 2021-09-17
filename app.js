@@ -44,8 +44,15 @@ function moveOutcomes(){
         (currentSnake[0] - width < 0 && direction === -width) || // if snake hits the top
         squares[currentSnake[0] + direction].classList.contains('snake') // if snake hit itsself
         )   {
-            alert('Game over')
-            return clearInterval(interval) // clear the interval
+            if (confirm('Game over. Press ok to restart')){
+              //  window.location = '/'
+              startGame()
+              return clearInterval(interval) // clear the interval
+            }
+           // return 
+            //alert('Game over')
+           
+           
            
         }
 
