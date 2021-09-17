@@ -46,13 +46,13 @@ function moveOutcomes(){
         )   {
             if (confirm('Game over. Press ok to restart')){
               //  window.location = '/'
+              //confirm('Game over. Press ok to restart')
               startGame()
-              return clearInterval(interval) // clear the interval
             }
            // return 
             //alert('Game over')
            
-           
+            return clearInterval(interval) // clear the interval
            
         }
 
