@@ -5,6 +5,8 @@ This nokia snake game was built following the <a href="https://www.youtube.com/w
 
 <h5>Issues</h5>
 While making this we did have an issue of the snake not moving with the keys we provided and had to resolve this by changing the event keycodes using these websites as eventkeycode is no longer supported by some web browsers.
+
+Another issue was when the snake hits itself or the wall the game just stops, so we have now added a alert button to show the user the game has ended
 <ul>
 <li>https://keycode.info/</li>
 <li>https://css-tricks.com/snippets/javascript/javascript-keycodes/</li>
