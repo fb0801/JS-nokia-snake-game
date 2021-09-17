@@ -7,5 +7,5 @@ This nokia snake game was built following the <a href="https://www.youtube.com/w
 While making this we did have an issue of the snake not moving with the keys we provided and had to resolve this by changing the event keycodes using these websites as eventkeycode is no longer supported by some web browsers.
 <ul>
 <li>https://keycode.info/</li>
-</li>https://css-tricks.com/snippets/javascript/javascript-keycodes/</li>
+<li>https://css-tricks.com/snippets/javascript/javascript-keycodes/</li>
 </ul>
