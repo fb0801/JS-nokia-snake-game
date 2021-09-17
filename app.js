@@ -79,7 +79,7 @@ function control(e){
     } else if(e.keycode === 38) {
         direction = -width // if we press up btn
     } else if (e.keycode === 37) {
-        direction -1 // if we move the snake left
+        direction = -1 // if we move the snake left
     } else if (e.keycode === 40) {
         direction = +width // if we move the snake down 
     }
@@ -88,5 +88,6 @@ function control(e){
 }
 
 document.addEventListener('keyup', control) // when the key is up 
+startBtn.addEventListener('click', startGame)
 
 })
