@@ -17,11 +17,26 @@ document.addEventListener('DOMContentLoaded',() =>{
     let interval = 0
 
 
+
+
+    
 function control(e){
     //different keys for the user to control the snake
+    squares[currentIndex].classList.remove('snake') //remove the snake class
+
+    if (e.keycode === 39) {
+        direction = 1 // if we move the snake to the right
+    } else if(e.keycode === 38) {
+        direction = -width // if we press up btn
+    } else if (e.keycode === 37) {
+        direction -1 // if we move the snake left
+    } else if (e.keycode === 40) {
+        direction = +width // if we move the snake down 
+    }
 
 
 }
 
+document.addEventListener('keyup', control) // when the key is up 
 
 })
