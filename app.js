@@ -44,7 +44,9 @@ function moveOutcomes(){
         (currentSnake[0] - width < 0 && direction === -width) || // if snake hits the top
         squares[currentSnake[0] + direction].classList.contains('snake') // if snake hit itsself
         )   {
+            alert('Game over')
             return clearInterval(interval) // clear the interval
+           
         }
 
 
@@ -80,17 +82,17 @@ function randomApple(){
 
 
 
-function control(e){
+function control(event){
     //different keys for the user to control the snake
     squares[currentIndex].classList.remove('snake') //remove the snake class
 
-    if (e.keycode === 39) {
+    if (event.keycode === 39 || event.keycode === 87) {
         direction = 1 // if we move the snake to the right
-    } else if(e.keycode === 38) {
+    } else if(event.keycode === 38) {
         direction = -width // if we press up btn
-    } else if (e.keycode === 37) {
+    } else if (event.keycode === 37) {
         direction = -1 // if we move the snake left
-    } else if (e.keycode === 40) {
+    } else if (event.keycode === 40) {
         direction = +width // if we move the snake down 
     }
 
