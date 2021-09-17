@@ -10,10 +10,15 @@ document.addEventListener('DOMContentLoaded',() =>{
     let currentIndex = 0 //for the first div
     let appleIndex = 0 //first div
     let currentSnake = [2,1,0] // 2 for the head, 0-1 being the body and tail
+    let direction = 1
+    let score = 0
+    let speed = 0.9
+    let intervalTime = 0
+    let interval = 0
 
 
 function control(e){
-    //different keys for the user to use to control the snake
+    //different keys for the user to control the snake
 
 
 }
