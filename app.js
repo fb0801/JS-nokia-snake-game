@@ -86,13 +86,13 @@ function control(event){
     //different keys for the user to control the snake
     squares[currentIndex].classList.remove('snake') //remove the snake class
 
-    if (event.keycode === 39 || event.keycode === 87) {
+    if (event.key === 'ArrowUp' || event.keycode === 87){//|| event.keycode === 87) { // 39 87
         direction = 1 // if we move the snake to the right
     } else if(event.keycode === 38) {
         direction = -width // if we press up btn
     } else if (event.keycode === 37) {
         direction = -1 // if we move the snake left
-    } else if (event.keycode === 40) {
+    } else if (event.key === 'ArrowDown') { 
         direction = +width // if we move the snake down 
     }
 
@@ -100,6 +100,7 @@ function control(event){
 }
 
 document.addEventListener('keyup', control) // when the key is up 
+document.addEventListener('keydown', control) // when the key is down
 startBtn.addEventListener('click', startGame)
 
 })
