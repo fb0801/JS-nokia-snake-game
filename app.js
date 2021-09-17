@@ -17,9 +17,36 @@ document.addEventListener('DOMContentLoaded',() =>{
     let interval = 0
 
 
+function startGame(){
+    //start and reset the game
+    currentSnake.forEach(index => squares[index].classList.remove('snake'))
+    squares[appleIndex].classList.remove('apple')
+    clearInterval(interval)
+    score = 0
+    //randomApple()
+    direction = 1
+    scoreDisplay.innerText = score // to display the score in the game
+    intervalTime = 1000 // number of seconds
+    currentSnake = [2,1,0]
+    currentSnake.forEach(index => squares[index].classList.add('snake'))
+    interval = setInterval(moveOutcomes, intervalTime)
+}
 
 
-    
+function moveOutcomes(){
+    //to deal with all actions of the snake
+
+    //if snake hits the edge or itself
+    if (
+        (currentSnake[0] + width >= (width * width) && direction === width) || //if snake hits bottom 
+        (currentSnake[0] % width === width -1 && direction === 1) || // if snake hit right side
+        (currentSnake[0] % width === 0 && direction === -1) || // if snake hit left side
+        (currentSnake[0] - width < 0 && direction === -width) // if snake hits the top
+        squares[currentSnake[0]] + direction
+        )   
+}
+
+
 function control(e){
     //different keys for the user to control the snake
     squares[currentIndex].classList.remove('snake') //remove the snake class
